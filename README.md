@@ -49,12 +49,18 @@ AlgoSim 3D is a modern, responsive, and visually stunning web application built 
 
 ---
 
-## 💻 Tech Stack
+## 💻 Tech Stack & Architecture
 
-- **Framework**: [React 19](https://react.dev/) + [Vite](https://vite.dev/) (Vite HMR)
-- **Styling**: Vanilla CSS (sleek dark mode variables, glassmorphism, responsive grids, orbital rings)
-- **Simulation**: High-performance HTML5 Canvas APIs
-- **Icons & Badges**: Volumetric Unicode styling
+- **Core Framework**: [React 19](https://react.dev/) & [Vite](https://vite.dev/) (utilizing Hot Module Replacement for rapid rendering)
+- **Graphics Engine**: High-performance 2D/3D visual styles built on HTML5 Canvas APIs:
+  - `SortingCanvas`: Volumetric 3D bar visualizations using isometric projections.
+  - `GraphCanvas`: Dynamic graph node arrays with search frontiers and queue states.
+  - `SearchCanvas`: Isometric diamond grid structures for visual index traversal.
+  - `DataStructureCanvas`: Dynamic pointer links, BST layouts, vertical stack slots, and linear queues.
+  - `DPCanvas`: 1D memoization vectors and 2D subproblem recurrence matrices.
+- **Styling**: Vanilla CSS (built using CSS custom properties for uniform dark-mode gradients, glassmorphism UI cards, floating particles, and responsive flexboxes)
+- **Custom Code Tokenizer**: Integrated regex-based parser inside `CodeEditor.jsx` for zero-dependency syntax highlighting across languages (JavaScript, Python, C++).
+- **Core State Machine**: Standard React state hooks (`useState`, `useEffect`, `useRef`, `useCallback`) orchestrating the tick intervals for algorithm steps.
 
 ---
 
