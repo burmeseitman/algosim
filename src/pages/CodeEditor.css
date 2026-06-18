@@ -1,0 +1,284 @@
+.editor-container {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 56px); /* Subtract TopNav height */
+  background: var(--bg-color);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+/* Sidebar Selector */
+.editor-sidebar {
+  width: 260px;
+  background: var(--bg-dark);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.editor-sidebar .sidebar-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.editor-sidebar h3 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.editor-sidebar .sidebar-nav {
+  padding: 16px 8px;
+}
+
+.editor-sidebar .nav-group {
+  margin-bottom: 8px;
+}
+
+.editor-sidebar .nav-group-title {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+  user-select: none;
+}
+
+.editor-sidebar .nav-group-title:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.editor-sidebar .chevron {
+  font-size: 16px;
+  margin-right: 8px;
+  transition: transform 0.2s;
+  color: var(--text-muted);
+}
+
+.editor-sidebar .chevron.open {
+  transform: rotate(90deg);
+}
+
+.editor-sidebar .nav-group-items {
+  margin-left: 12px;
+  padding-left: 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.editor-sidebar .nav-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.editor-sidebar .nav-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-color);
+}
+
+.editor-sidebar .nav-item.active {
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.editor-sidebar .file-icon {
+  margin-right: 8px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Editor Main Area */
+.editor-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #0d1117; /* GitHub Dark background */
+  overflow: hidden;
+}
+
+/* Toolbar */
+.editor-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #161b22;
+  border-bottom: 1px solid #21262d;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tab-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-icon-large {
+  font-size: 18px;
+}
+
+.filename {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c9d1d9;
+  display: block;
+}
+
+.file-meta {
+  font-size: 11px;
+  color: #8b949e;
+}
+
+.toolbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Language Selection Chips */
+.language-selector {
+  display: flex;
+  background: #0d1117;
+  padding: 3px;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #8b949e;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-btn:hover {
+  color: #c9d1d9;
+}
+
+.lang-btn.active {
+  background: #21262d;
+  color: #f0f6fc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.toolbar-btn {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid #30363d;
+}
+
+.copy-btn {
+  background: #21262d;
+  color: #c9d1d9;
+}
+
+.copy-btn:hover {
+  background: #30363d;
+  border-color: #8b949e;
+}
+
+.run-btn {
+  background: #238636; /* GitHub Green */
+  color: #ffffff;
+  border-color: rgba(240, 246, 252, 0.1);
+  font-weight: 600;
+}
+
+.run-btn:hover {
+  background: #2ea043;
+  box-shadow: 0 0 10px rgba(46, 160, 67, 0.3);
+}
+
+/* Code Viewer Body */
+.editor-body {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  background: #0d1117;
+  padding: 16px 0;
+}
+
+.line-numbers {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding: 0 16px;
+  color: #484f58;
+  border-right: 1px solid #21262d;
+  user-select: none;
+  min-width: 24px;
+}
+
+.code-pre {
+  margin: 0;
+  padding: 0 24px;
+  overflow-x: auto;
+  flex: 1;
+  color: #c9d1d9;
+  text-align: left;
+}
+
+.code-pre code {
+  font-family: inherit;
+}
+
+/* Custom Syntax Highlight Tokens */
+.token-comment {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.token-keyword {
+  color: #ff7b72; /* Light Red */
+  font-weight: 600;
+}
+
+.token-function {
+  color: #d2a8ff; /* Purple */
+}
+
+.token-string {
+  color: #a5d6ff; /* Blue */
+}
+
+.token-number {
+  color: #79c0ff; /* Light Blue */
+}

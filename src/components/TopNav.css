@@ -1,0 +1,91 @@
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 64px;
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.topnav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topnav-icon {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  border-radius: 4px;
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.topnav-logo h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.topnav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.topnav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.topnav-link:hover {
+  color: var(--text-main);
+  background: rgba(255,255,255,0.05);
+}
+
+.nav-icon {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.topnav-link.active .nav-icon {
+  opacity: 1;
+}
+
+.topnav-link.active {
+  color: var(--accent-green);
+}
+
+.topnav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-green);
+  box-shadow: var(--shadow-glow-green);
+}
+
+.topnav-profile .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--panel-color);
+  border: 2px solid var(--border-color);
+}

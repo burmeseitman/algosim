@@ -1,0 +1,322 @@
+.paramview {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+
+/* Left info panel */
+.paramview-info {
+  padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--border-color);
+  background: linear-gradient(135deg, rgba(56,189,248,0.03) 0%, transparent 60%);
+}
+
+.paramview-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: var(--accent-blue);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+.paramview-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -1.5px;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+}
+
+.complexity-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.complexity-chip {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 16px;
+  background: var(--panel-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  min-width: 80px;
+}
+
+.complexity-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.complexity-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-green);
+  font-family: 'SFMono-Regular', Consolas, monospace;
+}
+
+.paramview-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.paramview-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.instruction-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--panel-color);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  flex-shrink: 0;
+}
+
+.instruction-step strong {
+  color: var(--accent-green);
+}
+
+/* Right form panel */
+.paramview-form {
+  padding: 60px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--panel-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.form-card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.02);
+}
+
+.form-card-header h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-algo-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  background: rgba(52, 211, 153, 0.1);
+  color: var(--accent-green);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 20px;
+}
+
+.form-fields {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.field-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: monospace;
+  margin: 0;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 4px;
+  border-left: 2px solid var(--accent-blue);
+}
+
+/* Radio group */
+.radio-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.radio-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px 12px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.radio-btn:hover {
+  border-color: var(--accent-blue);
+  color: var(--text-main);
+}
+
+.radio-btn.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+}
+
+/* Number input */
+.number-input {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'SFMono-Regular', monospace;
+  outline: none;
+  width: 120px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.number-input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.15);
+}
+
+/* Toggle */
+.toggle-btn {
+  width: 48px;
+  height: 26px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.toggle-btn.active {
+  background: rgba(52, 211, 153, 0.2);
+  border-color: var(--accent-green);
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: var(--text-muted);
+  border-radius: 50%;
+  transition: transform 0.25s, background 0.25s;
+}
+
+.toggle-btn.active .toggle-knob {
+  transform: translateX(22px);
+  background: var(--accent-green);
+  box-shadow: 0 0 8px var(--accent-glow-green);
+}
+
+/* Run button */
+.run-btn {
+  width: 100%;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  border: none;
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.run-btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+}
+
+.run-btn:active { transform: scale(0.99); }
+
+.run-btn-icon {
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.run-btn:hover .run-btn-icon {
+  transform: translateX(4px);
+}
